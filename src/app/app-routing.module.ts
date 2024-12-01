@@ -1,7 +1,33 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SaveComponent } from './blog/save/save.component';
+import { ViewComponent } from './blog/view/view.component';
+import { DeleteComponent } from './blog/delete/delete.component';
+import { UpdateComponent } from './blog/update/update.component';
+import { AppComponent } from './app.component';
+import { HomeComponent } from './blog/home/home.component';
 
-const routes: Routes = [];
+const routes: Routes = [
+  { path: 'save', component: SaveComponent },
+  { path: 'view', component: ViewComponent },
+  { path: 'delete', component: DeleteComponent },
+  { path: 'update', component: UpdateComponent },
+  { path: 'home', component: HomeComponent }
+
+]; 
+
+/*const routes: Routes = [
+  {
+    path: '/',
+    component: HomeComponent,
+    children: [
+      { path: 'save', component: SaveComponent },
+      { path: 'view', component: ViewComponent },
+      { path: 'delete', component: DeleteComponent },
+      { path: 'update', component: UpdateComponent }
+    ],
+  }
+]; */
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

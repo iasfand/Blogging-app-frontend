@@ -1,0 +1,19 @@
+
+<html>
+    <title>Save</title>
+<body>
+<h2>View</h2>
+
+<!--<button type="button" class="btn btn-primary" (click)="viewAll()">Post</button>-->
+
+    <div *ngFor="let item of viewAllResp" id="rcorners">
+        <div style="border-bottom:1px solid black;">{{item.id}}</div>
+        <div style="border-bottom:1px solid black;">{{item.name}}</div>
+        <div style="border-bottom:1px solid black;">{{item.content}}</div>
+        <div style="border-bottom:1px solid black;">{{item.title}}</div>
+        <div style="border-bottom:1px solid black;">{{item.date_time}}</div>
+        <div style="border-bottom:1px solid black;">{{item.tags}}</div>
+    </div>
+<!--<div>{{viewAllResp[0]}}</div>-->
+</body>
+</html>

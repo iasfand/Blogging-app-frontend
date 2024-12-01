@@ -1,0 +1,16 @@
+
+<html>
+    <title>Delete</title>
+<body>
+<h2>Delete</h2>
+<div *ngFor="let item of viewAllResp" id="rcorners">
+    <input type="hidden" id="id" name="id" value="{{item.id}}" #idv>
+    <div style="border-bottom:1px solid black;">{{item.name}}</div>
+    <div style="border-bottom:1px solid black;">{{item.content}}</div>
+    <div style="border-bottom:1px solid black;">{{item.title}}</div>
+    <div style="border-bottom:1px solid black;">{{item.date_time}}</div>
+    <div style="border-bottom:1px solid black;">{{item.tags}}</div>
+    <button (click)="deletePost(idv.value)">Delete</button>
+</div>
+</body>
+</html>
