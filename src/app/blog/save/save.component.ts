@@ -9,7 +9,7 @@ import { ApiCallingService } from 'src/app/api-calling.service';
 })
 export class SaveComponent implements OnInit{
     addPostResp:any;
-
+    successDisp:any=false;
     ngOnInit() {
 
   }
@@ -18,11 +18,13 @@ export class SaveComponent implements OnInit{
 
 addPost(title:any,name:any,tags:any,post:any)
   {
+    this.successDisp=true;
 //    this.addPostResp=this.apiCalling.savePost(title,name,tags,post);
 
     this.apiService.savePost(title,name,tags,post).subscribe(data=>{
-      this.addPostResp = data;
-   console.log(data);
+    //  this.addPostResp = JSON.stringify(data);
+    this.addPostResp='Success';
+   console.log(this.addPostResp);
   
   },err=>{
     this.addPostResp =err;

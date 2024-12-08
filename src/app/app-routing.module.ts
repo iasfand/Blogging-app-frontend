@@ -6,13 +6,15 @@ import { DeleteComponent } from './blog/delete/delete.component';
 import { UpdateComponent } from './blog/update/update.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './blog/home/home.component';
+import { LoginComponent } from './blog/login/login.component';
 
 const routes: Routes = [
   { path: 'save', component: SaveComponent },
   { path: 'view', component: ViewComponent },
   { path: 'delete', component: DeleteComponent },
   { path: 'update', component: UpdateComponent },
-  { path: 'home', component: HomeComponent }
+  { path: 'home', component: HomeComponent },
+  { path: 'login', component: LoginComponent }
 
 ]; 
 

@@ -10,6 +10,7 @@ import { ViewComponent } from './blog/view/view.component';
 import { HttpClientModule,HttpClient } from '@angular/common/http';
 import { HomeComponent } from './blog/home/home.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './blog/login/login.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule } from '@angular/forms';
     UpdateComponent,
     DeleteComponent,
     ViewComponent,
-    HomeComponent
+    HomeComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,

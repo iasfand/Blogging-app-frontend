@@ -1,6 +1,42 @@
-<app-save *ngIf="route=='/save'"></app-save>
+<html>
+    <title>
+
+    </title>
+    <head>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    </head>
+
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBleUsSYLFH1iqUZf9bSN43vGodIgnD-XMJQ&s')">
+<!--<div class="row">
+    <button type="button" class="btn btn-primary" routerLink="/save">Add new</button>
+    <button type="button" class="btn btn-primary" routerLink="/view">View</button>
+    <button type="button" class="btn btn-primary" routerLink="/delete">Delete</button>
+    <button type="button" class="btn btn-primary" routerLink="/update">Update</button>
+  </div> -->
+  
+  
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Asfand Blogging App</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li><a href="#" routerLink="/save">Add new</a></li>
+        <li><a href="#" routerLink="/view">View All Blogs</a></li>
+        <li><a href="#" routerLink="/delete">Delete Blogs</a></li>
+        <li><a href="#" routerLink="/update">Update Blogs</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <app-save *ngIf="route=='/save'"></app-save>
 <app-update *ngIf="route=='/update'"></app-update>
 <app-delete *ngIf="route=='/delete'"></app-delete>
 <app-view *ngIf="route=='/view'"></app-view>
+<app-login *ngIf="route=='/login'"></app-login>
 <app-home *ngIf="route=='/'"></app-home>
 <router-outlet></router-outlet>
+</body>
+</html>

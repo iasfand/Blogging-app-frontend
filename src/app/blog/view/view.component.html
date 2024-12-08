@@ -1,19 +1,131 @@
 
 <html>
     <title>Save</title>
-<body>
-<h2>View</h2>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBleUsSYLFH1iqUZf9bSN43vGodIgnD-XMJQ&s')">
+    <div class="container" style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBleUsSYLFH1iqUZf9bSN43vGodIgnD-XMJQ&s')">
+        <h2>Welcome to AsfandBlog Blog Platform</h2>
+        <h4>Your Gateway to Smarter Blogging
+        Welcome to AsfandBlog, the ultimate cloud-based blog platform designed to inspire creativity, foster connection, and empower your digital voice. Whether you’re a passionate storyteller, an industry expert, or a business looking to grow your online presence, you’ve come to the right place.
+        Why AsfandBlog?<br>
+        •	Seamless Accessibility: Create, edit, and publish your blogs from anywhere, on any device.<br>
+        •	Robust Security: Enjoy peace of mind with our secure blogging platform.</h4>    
+    </div>
+
+<h1>View</h1>
 
 <!--<button type="button" class="btn btn-primary" (click)="viewAll()">Post</button>-->
 
-    <div *ngFor="let item of viewAllResp" id="rcorners">
+   <!-- <div *ngFor="let item of viewAllResp" id="rcorners">
         <div style="border-bottom:1px solid black;">{{item.id}}</div>
         <div style="border-bottom:1px solid black;">{{item.name}}</div>
         <div style="border-bottom:1px solid black;">{{item.content}}</div>
         <div style="border-bottom:1px solid black;">{{item.title}}</div>
         <div style="border-bottom:1px solid black;">{{item.date_time}}</div>
         <div style="border-bottom:1px solid black;">{{item.tags}}</div>
-    </div>
+    </div> -->
 <!--<div>{{viewAllResp[0]}}</div>-->
+
+
+<!--<div class="jumbotron" *ngFor="let item of viewAllResp" id="rcorners">
+    <div style="border-bottom:1px solid black;">{{item.id}}</div>
+    <div style="border-bottom:1px solid black;">{{item.name}}</div>
+    <div style="border-bottom:1px solid black;">{{item.content}}</div>
+    <div style="border-bottom:1px solid black;">{{item.title}}</div>
+    <div style="border-bottom:1px solid black;">{{item.date_time}}</div>
+    <div style="border-bottom:1px solid black;">{{item.tags}}</div>
+</div> -->
+
+<div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Tags</th>
+          <th scope="col">Update</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of viewAllResp" id="rcorners">
+          <input type="hidden" id="id" name="id" value="{{item.id}}" #idv>
+          <th scope="row">{{item.id}}</th>
+          <td>{{item.title}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.tags}}</td>
+          <td><a>
+            <span class="glyphicon glyphicon-search" (click)="viewOne(idv.value)"></span>
+          </a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+<div *ngIf="isDisp==false">
+<section id="work-process" *ngFor="let item of viewAllResp" id="rcorners">
+    <div class="container">
+            <div class="row">
+                <h2 style="text-align: center;">Title</h2>
+                <h4 style="text-align: center;">{{item.title}}</h4>
+            </div>
+            <hr class="hr" />
+            <div class="row">
+                <h2>Author</h2>
+                <h4>{{item.name}}</h4>
+            </div>
+            <div class="row">
+                <h2>Published Date</h2>
+                <h4>{{item.date_time}}</h4>
+            </div>
+            <hr class="hr" />
+            <div class="row">
+                <h2>Tags</h2>
+                <h4>{{item.tags}}</h4>
+            </div>
+            <hr class="hr" />
+            <div class="row">
+                <h2>Content</h2>
+                <p>{{item.content}}</p>
+            </div>
+        </div>
+
+
+</section>
+</div>
+
+<div *ngIf="isDisp==true">
+<section id="work-process" id="rcorners">
+    <div class="container">
+            <div class="row">
+                <h2 style="text-align: center;">Title</h2>
+                <h4 style="text-align: center;">{{rtitle}}</h4>
+            </div>
+            <hr class="hr" />
+            <div class="row">
+                <h2>Author</h2>
+                <h4>{{rname}}</h4>
+            </div>
+            <div class="row">
+                <h2>Published Date</h2>
+                <h4>{{rdate_time}}</h4>
+            </div>
+            <hr class="hr" />
+            <div class="row">
+                <h2>Tags</h2>
+                <h4>{{rtags}}</h4>
+            </div>
+            <hr class="hr" />
+            <div class="row">
+                <h2>Content</h2>
+                <p>{{rcontent}}</p>
+            </div>
+        </div>
+
+
+</section>
+</div>
 </body>
 </html>

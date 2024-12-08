@@ -1,9 +1,22 @@
 
 <html>
     <title>Delete</title>
-<body>
-<h2>Delete</h2>
-<div *ngFor="let item of viewAllResp" id="rcorners">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBleUsSYLFH1iqUZf9bSN43vGodIgnD-XMJQ&s')">
+
+    <div class="container">
+        <h2>Welcome to AsfandBlog Blog Platform</h2>
+        <h4>Your Gateway to Smarter Blogging
+        Welcome to AsfandBlog, the ultimate cloud-based blog platform designed to inspire creativity, foster connection, and empower your digital voice. Whether you’re a passionate storyteller, an industry expert, or a business looking to grow your online presence, you’ve come to the right place.
+        Why AsfandBlog?<br>
+        •	Seamless Accessibility: Create, edit, and publish your blogs from anywhere, on any device.<br>
+        •	Robust Security: Enjoy peace of mind with our secure blogging platform.</h4>    
+    </div>
+
+<h1>Delete</h1>
+<!--<div *ngFor="let item of viewAllResp" id="rcorners">
     <input type="hidden" id="id" name="id" value="{{item.id}}" #idv>
     <div style="border-bottom:1px solid black;">{{item.name}}</div>
     <div style="border-bottom:1px solid black;">{{item.content}}</div>
@@ -11,6 +24,57 @@
     <div style="border-bottom:1px solid black;">{{item.date_time}}</div>
     <div style="border-bottom:1px solid black;">{{item.tags}}</div>
     <button (click)="deletePost(idv.value)">Delete</button>
-</div>
+</div> -->
+
+<div>
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id</th>
+          <th scope="col">Title</th>
+          <th scope="col">Author</th>
+          <th scope="col">Tags</th>
+          <th scope="col">Delete</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let item of viewAllResp" id="rcorners">
+          <input type="hidden" id="id" name="id" value="{{item.id}}" #idv>
+          <th scope="row">{{item.id}}</th>
+          <td>{{item.title}}</td>
+          <td>{{item.name}}</td>
+          <td>{{item.tags}}</td>
+          <td><a>
+            <span class="glyphicon glyphicon-trash" (click)="viewOne(idv.value)"></span>
+          </a></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="container" *ngIf="dispUpdate==true">
+    <h2>View Deleted Blog</h2>
+    <input type="hidden" name="rid" [(ngModel)]="rid">
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" class="form-control" [(ngModel)]="rtitle" readonly>
+      </div>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" [(ngModel)]="rname" class="form-control" id="name" #name readonly>
+      </div>
+      <div class="form-group">
+        <label for="tags">Tags:</label>
+        <input type="text" [(ngModel)]="rtags" class="form-control" id="tags" #tags readonly>
+      </div>
+      <div class="form-group">
+        <label for="comment">Post:</label>
+        <textarea class="form-control" [(ngModel)]="rcontent" rows="5" id="comment" #post readonly></textarea>
+      </div>
+      <button (click)="deletePost(rid)">Delete</button>
+      <div class="well" *ngIf="deleteDisp" ><h2>Delete Successfully</h2></div>
+
+  
+    </div>
 </body>
 </html>

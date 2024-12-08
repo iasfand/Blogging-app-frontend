@@ -25,7 +25,7 @@ export class ApiCallingService {
     };
     console.log(body);
 
-    let url="http://54.171.232.115:8080/save"; 
+    let url="http://54.171.232.115:8081/save"; 
     return this.http.post<any>(url,body);
   }
 
@@ -34,14 +34,14 @@ export class ApiCallingService {
   {
 
 
-    let url="http://54.171.232.115:8080/allblogs"; 
+    let url="http://54.171.232.115:8081/allblogs"; 
     return this.http.get<any[]>(url);
   }
 
 
   viewSpecific(id:any):Observable<any>
   {
-    let url="http://54.171.232.115:8080/show/"+id; 
+    let url="http://54.171.232.115:8081/show/"+id; 
     return this.http.get<any[]>(url);
   }
 
@@ -58,14 +58,41 @@ export class ApiCallingService {
     "title":title
     };
     console.log(body);
-    let url="http://54.171.232.115:8080/update"; 
+    let url="http://54.171.232.115:8081/update"; 
     return this.http.post<any[]>(url,body);
   }
 
   deletePost(id:any):Observable<any>
   {
     console.log(id);
-    let url="http://54.171.232.115:8080/delete/"+id; 
+    let url="http://54.171.232.115:8081/delete/"+id; 
     return this.http.get<any[]>(url);
+  }
+
+
+  saveUser(id:any,email:any,username:any,password:any):Observable<any>
+  {
+  
+    const body = {
+      "id":id,
+      "username":username,
+      "email":email,
+      "password":password
+    };
+    console.log(body);
+    let url="http://54.171.232.115:8081/saveUser"; 
+    return this.http.post<any[]>(url,body);
+  }
+
+  validateUser(username:any,password:any):Observable<any>
+  {
+  
+    const body = {
+    "username":username,
+    "password":password
+    };
+    console.log(body);
+    let url="http://54.171.232.115:8081/validate"; 
+    return this.http.post<any[]>(url,body);
   }
 }

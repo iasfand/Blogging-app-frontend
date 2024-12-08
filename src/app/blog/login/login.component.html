@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBleUsSYLFH1iqUZf9bSN43vGodIgnD-XMJQ&s')">
+
+
+    <div class="container">
+        <h2>Welcome to AsfandBlog Blog Platform</h2>
+        <h4>Your Gateway to Smarter Blogging
+        Welcome to AsfandBlog, the ultimate cloud-based blog platform designed to inspire creativity, foster connection, and empower your digital voice. Whether you’re a passionate storyteller, an industry expert, or a business looking to grow your online presence, you’ve come to the right place.
+        Why AsfandBlog?
+        •	Seamless Accessibility: Create, edit, and publish your blogs from anywhere, on any device.
+        •	Robust Security: Enjoy peace of mind with our secure blogging platform.</h4>    
+    </div>
+
+<div class="container">
+<div class="row">
+<div class="col-sm-6" style="border-right:2px solid grey;">
+ <form class="form-horizontal">
+ <h1>Login</h1>
+ <div class="form-group">
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="email1" placeholder="Enter email or username" name="email1" #email1>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-10">          
+        <input type="password" class="form-control" id="pwd1" placeholder="Enter password" name="pwd1" #pwd1>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label><input type="checkbox" name="remember"> Remember me</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" (click)="validateUser(email1.value,pwd1.value)">Login</button>
+      </div>
+    </div>
+    <div class="well" *ngIf="loginDisp==true" ><h2>{{validateUserResp}}</h2></div>
+    </form>
+    
+</div>
+
+<div class="col-sm-6">
+<h1>Registration</h1>
+ <form class="form-horizontal">
+ <div class="form-group">
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="email" placeholder="Enter email" name="email" #email>
+      </div>
+    </div>
+     <div class="form-group">
+      <div class="col-sm-10">
+        <input type="email" class="form-control" id="uname" placeholder="Enter username" name="uname" #uname>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-10">          
+        <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd" #pwd>
+      </div>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-10">          
+        <input type="password" class="form-control" id="pwd2" placeholder="Enter password again" name="pwd2" #pwd2>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <div class="checkbox">
+          <label><input type="checkbox" name="remember"> Remember me</label>
+        </div>
+      </div>
+    </div>
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        <button type="submit" class="btn btn-default" (click)="saveUser(email.value,uname.value,pwd.value,pwd2.value)">Register</button>
+      </div>
+    </div>
+  
+
+    </form>
+    <div class="well" *ngIf="saveDisp==true"><h2>{{saveUserResp}}</h2></div>
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>

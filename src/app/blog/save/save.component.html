@@ -1,11 +1,28 @@
 
 <html>
-    <title>Save</title>
-<body>
-    <h2>Save</h2>
+<head>
+<title>Save</title>
+<script>
+  $(document).ready(function(){
+      $(".well").hide(5000);
+
+  });
+  </script>
+</head>
+<body style="background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSBleUsSYLFH1iqUZf9bSN43vGodIgnD-XMJQ&s')">
+  
+
 <div class="container">
-    <h2>Form control: textarea</h2>
-    <p>The form below contains a textarea for comments:</p>
+  <div class="container">
+    <h2>Welcome to AsfandBlog Blog Platform</h2>
+    <h4>Your Gateway to Smarter Blogging
+    Welcome to AsfandBlog, the ultimate cloud-based blog platform designed to inspire creativity, foster connection, and empower your digital voice. Whether you’re a passionate storyteller, an industry expert, or a business looking to grow your online presence, you’ve come to the right place.
+    Why AsfandBlog?<br>
+    •	Seamless Accessibility: Create, edit, and publish your blogs from anywhere, on any device.<br>
+    •	Robust Security: Enjoy peace of mind with our secure blogging platform.</h4>    
+</div>
+    <div class="row">
+ <h2>Write Blog</h2>
 
     <div class="form-group">
         <label for="title">Title:</label>
@@ -24,7 +41,11 @@
         <textarea class="form-control" rows="5" id="comment" #post></textarea>
       </div>
       <button type="button" class="btn btn-primary" (click)="addPost(title.value,name.value,tags.value,post.value)">Post</button>
-    <h1>{{addPostResp}}</h1> 
+     
     </div>
+<!--    <div class="well" *ngIf="successDisp"><h1>{{addPostResp}}</h1></div>-->
+    <div class="well" *ngIf="successDisp"><h3>Success</h3></div>
+
+  </div>
 </body>
     </html>   

@@ -17,7 +17,7 @@ rtitle:any="";
 rtags:any="";
 rid:any="";
 dispUpdate:boolean=false;
-
+dispResp:boolean=false;
   ngOnInit() {
  
     this.viewAll()
@@ -29,10 +29,11 @@ dispUpdate:boolean=false;
     updatePost(id:any,title:any,name:any,tags:any,post:any)
     {
   //    this.addPostResp=this.apiCalling.savePost(title,name,tags,post);
-  
+
       this.apiService.updatePost(id,title,name,tags,post).subscribe(data=>{
-        this.updatePostResp = data;
-     console.log(data);
+    //    this.updatePostResp = data;
+   // this.updatePostResp="Update Successfully"; 
+    console.log(data);
     
     },err=>{
       this.updatePostResp =err;
@@ -88,6 +89,7 @@ dispUpdate:boolean=false;
 
     updateContent(id:any,ftitle:any,fname:any,ftags:any,fcontent:any)
     {
+      this.dispResp=true;
       console.log(id);
       console.log(ftitle);
       console.log(fname);
@@ -95,7 +97,7 @@ dispUpdate:boolean=false;
       console.log(fcontent);
       this.apiService.updatePost(id,ftitle,fname,ftags,fcontent).subscribe(data=>{
         this.viewAllResp = data;
-    
+        this.updatePostResp="Update Successfully"; 
         console.log(this.viewAllResp);
     
     },err=>{
