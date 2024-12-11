@@ -14,7 +14,8 @@ const routes: Routes = [
   { path: 'delete', component: DeleteComponent },
   { path: 'update', component: UpdateComponent },
   { path: 'home', component: HomeComponent },
-  { path: 'login', component: LoginComponent }
+  { path: 'login', component: LoginComponent },
+  { path: '', component: LoginComponent }
 
 ]; 
 

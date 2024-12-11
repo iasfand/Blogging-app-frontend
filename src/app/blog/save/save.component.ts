@@ -21,7 +21,7 @@ addPost(title:any,name:any,tags:any,post:any)
     this.successDisp=true;
 //    this.addPostResp=this.apiCalling.savePost(title,name,tags,post);
 
-    this.apiService.savePost(title,name,tags,post).subscribe(data=>{
+    this.apiService.savePost(this.randomIntFromInterval(10000,99999),title,name,tags,post).subscribe(data=>{
     //  this.addPostResp = JSON.stringify(data);
     this.addPostResp='Success';
    console.log(this.addPostResp);
@@ -32,4 +32,10 @@ addPost(title:any,name:any,tags:any,post:any)
   }
   );
   }  
+
+
+  
+randomIntFromInterval(min:any, max:any) { // min and max included 
+  return Math.floor(Math.random() * (max - min + 1) + min);
+}
 }

@@ -56,7 +56,7 @@ validateUser(username:any,password:any)
       }
       else
       {this.validateUserResp="Login Successfully";
-      this.router.navigate(['/']);
+      this.router.navigate(['/home']);
       }
       console.log(data);
    

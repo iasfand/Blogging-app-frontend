@@ -9,19 +9,20 @@ export class ApiCallingService {
   constructor(private http: HttpClient) { }
 
 
-  savePost(title:any,name:any,tags:any,post:any):Observable<any>
+  savePost(id:any,title:any,name:any,tags:any,post:any):Observable<any>
   {
+    const currentDate = new Date();	
    /* let body = new URLSearchParams();
     body.set('from',from);
     body.set('to',to);
     body.set('text',from_text);  */
     const body = { 
-      "id":"32432",
+      "id":id,
       "title": title,
       "name": name,
       "tags": tags,
       "content": post,
-      "date_time": "POST Request Example" 
+      "date_time": currentDate 
     };
     console.log(body);
 
@@ -48,10 +49,10 @@ export class ApiCallingService {
 
   updatePost(id:any,title:any,name:any,tags:any,content:any):Observable<any>
   {
-  
+    const currentDate = new Date();	
     const body = {
     "id":id,
-    "date":"date",
+    "date":currentDate,
     "name":name,
     "content":content,
     "tags":tags,
